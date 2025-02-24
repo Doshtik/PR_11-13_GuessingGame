@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 
 class GameViewModel: ViewModel() {
     //Поля
-    private val words = listOf("Android", "Activity", "Fragment")
+    private val words = listOf("Activity", "Android", "Fragment")
     private val secretWord = words.random().uppercase()
     private var correctGuesses = ""
     private val _secretWordDisplay = MutableLiveData<String>()

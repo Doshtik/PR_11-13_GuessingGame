@@ -23,7 +23,9 @@ class ResultFragment : Fragment() {
         viewModelFactory = ResultViewModelFactory(result)
         viewModel = ViewModelProvider(this, viewModelFactory).get(ResultViewModel::class.java)
 
-        binding.wonLost.text = viewModel.result
+        binding.resultViewModel = viewModel
+        /* binding.wonLost.text = viewModel.result
+         * Эта строка более не нужна, так как текст представления задается через механизм связывания данных.*/
 
         binding.newGameButton.setOnClickListener() {
             view.findNavController()
