@@ -26,6 +26,9 @@ class GameFragment : Fragment() {
         viewModel.livesLeft.observe(viewLifecycleOwner, Observer { newValue ->
             binding.lives.text = "You have $newValue lives left"
         })
+        viewModel.secretWordDisplay.observe(viewLifecycleOwner, Observer { newValue ->
+            binding.word.text = newValue
+        })
 
         binding.guessButton.setOnClickListener() {
             viewModel.makeGuess(binding.guess.text.toString().uppercase())
